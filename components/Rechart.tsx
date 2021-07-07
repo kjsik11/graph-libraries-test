@@ -7,6 +7,7 @@ import {
   Tooltip,
   CartesianGrid,
   Legend,
+  Brush,
   ReferenceLine,
   ReferenceArea,
 } from 'recharts';
@@ -62,6 +63,7 @@ export default function RechartComponent({
         {referenceArea && (
           <ReferenceArea x1={5} x2={6} y1={0.5} y2={0.73} stroke="red" strokeOpacity={0.3} />
         )}
+        <Brush />
         {line &&
           Object.entries(sampleData[0])
             .slice(1)
