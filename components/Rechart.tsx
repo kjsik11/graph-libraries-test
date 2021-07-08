@@ -22,6 +22,7 @@ interface Props {
   referenceLine: boolean;
   cartesianGrid: boolean;
   legend: boolean;
+  brush: boolean;
   line: boolean;
 }
 export default function RechartComponent({
@@ -29,6 +30,7 @@ export default function RechartComponent({
   yAxis,
   referenceLine,
   referenceArea,
+  brush,
   tooltip,
   cartesianGrid,
   legend,
@@ -63,7 +65,7 @@ export default function RechartComponent({
         {referenceArea && (
           <ReferenceArea x1={5} x2={6} y1={0.5} y2={0.73} stroke="red" strokeOpacity={0.3} />
         )}
-        <Brush />
+        {brush && <Brush />}
         {line &&
           Object.entries(sampleData[0])
             .slice(1)

@@ -11,6 +11,7 @@ export default function RechartPage() {
   const [refrenceLine, setRefrenceLine] = useState(true);
   const [cartesianGrid, setCartesianGrid] = useState(true);
   const [legend, setLegend] = useState(true);
+  const [brush, setBrush] = useState(true);
   const [tooltip, setTooltip] = useState(false);
 
   const RechartComponent = dynamic(() => import('@components/Rechart'), { ssr: false });
@@ -112,9 +113,21 @@ export default function RechartPage() {
           }
           label="Line"
         />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={brush}
+              onChange={() => setBrush((prev) => !prev)}
+              name="checkedB"
+              color="primary"
+            />
+          }
+          label="Brush"
+        />
       </div>
       <div>
         <RechartComponent
+          brush={brush}
           line={line}
           cartesianGrid={cartesianGrid}
           legend={legend}
