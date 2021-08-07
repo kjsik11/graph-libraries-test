@@ -10,6 +10,9 @@ export default function Home() {
       <Link href="/recharts">
         <Button>recharts</Button>
       </Link>
+      <Link href="/window">
+        <Button>Window Test</Button>
+      </Link>
     </div>
   );
 }
